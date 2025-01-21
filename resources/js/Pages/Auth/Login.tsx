@@ -1,8 +1,9 @@
-import Checkbox from '@/Components/Checkbox';
-import InputError from '@/Components/InputError';
-import InputLabel from '@/Components/InputLabel';
-import PrimaryButton from '@/Components/PrimaryButton';
-import TextInput from '@/Components/TextInput';
+import Checkbox from '@/Components/Core/Checkbox';
+import InputError from '@/Components/Core/InputError';
+import InputLabel from '@/Components/Core/InputLabel';
+import PrimaryButton from '@/Components/Core/PrimaryButton';
+import TextInput from '@/Components/Core/TextInput';
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import GuestLayout from '@/Layouts/GuestLayout';
 import { Head, Link, useForm } from '@inertiajs/react';
 import { FormEventHandler } from 'react';
@@ -29,15 +30,17 @@ export default function Login({
     };
 
     return (
-        <GuestLayout>
+        <AuthenticatedLayout>
             <Head title="Log in" />
 
-            {status && (
+<div className="p-8">
+  <div className='max-w-md mx-auto card bg-base-100 shadow-xl'>
+    <div className='card-body'>
+    {status && (
                 <div className="mb-4 text-sm font-medium text-green-600">
                     {status}
                 </div>
             )}
-
             <form onSubmit={submit}>
                 <div>
                     <InputLabel htmlFor="email" value="Email" />
@@ -91,7 +94,7 @@ export default function Login({
                     {canResetPassword && (
                         <Link
                             href={route('password.request')}
-                            className="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:text-gray-400 dark:hover:text-gray-100 dark:focus:ring-offset-gray-800"
+                            className="link"
                         >
                             Forgot your password?
                         </Link>
@@ -102,6 +105,9 @@ export default function Login({
                     </PrimaryButton>
                 </div>
             </form>
-        </GuestLayout>
+          </div>
+</div>
+</div>
+        </AuthenticatedLayout>
     );
 }
