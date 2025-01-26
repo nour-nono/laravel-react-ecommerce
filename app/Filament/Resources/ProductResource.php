@@ -164,6 +164,7 @@ class ProductResource extends Resource
             'edit' => Pages\EditProduct::route('/{record}/edit'),
             'images' => Pages\ProductImages::route('/{record}/images'),
             'varaition-types' => Pages\ProductVariationTypes::route('/{record}/variation-types'),
+            'variations' => Pages\ProductVariations::route('/{record}/variations'),
         ];
     }
 
@@ -173,6 +174,7 @@ class ProductResource extends Resource
             EditProduct::class,
             ProductImages::class,
             Pages\ProductVariationTypes::class,
+            Pages\ProductVariations::class,
         ]);
     }
 
