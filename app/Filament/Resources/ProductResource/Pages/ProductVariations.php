@@ -187,6 +187,8 @@ class ProductVariations extends EditRecord
             'variation_type_option_ids', 'quantity', 'price'
         ]);
 
+        return $record;
+
 
     }
 }
