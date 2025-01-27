@@ -43,7 +43,7 @@ class ProductVariations extends EditRecord
                     ->defaultItems(1)
                     ->columns(2)
                     ->columnSpan(2)
-                    ->schema(array_merge($fields, [
+                    ->schema( [
                         Section::make()
                             ->schema($fields)
                             ->columns(3),
@@ -54,7 +54,7 @@ class ProductVariations extends EditRecord
                             ->label('Price')
                             ->numeric()
 
-                    ])),
+                    ]),
 
             ]);
     }

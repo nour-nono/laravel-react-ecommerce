@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('type');
         });
 
-        Schema::create('variation_types_options', function (Blueprint $table) {
+        Schema::create('variation_type_options', function (Blueprint $table) {
             $table->id();
             $table->foreignId('variation_type_id')
                 ->index()->constrained('variation_types')
@@ -33,7 +33,7 @@ return new class extends Migration
             $table->foreignId('product_id')
                 ->index()->constrained('products')
                 ->cascadeOnDelete();
-            $table->json('variation_type_ids');
+            $table->json('variation_type_option_ids');
             $table->integer('quantity')->nullable();
             $table->decimal('price', 20, 4)->nullable();
             $table->timestamps();

@@ -26,7 +26,7 @@ class ProductVariationTypes extends EditRecord
         return $form
             ->schema([
                 //
-                Repeater::make('variation_types')
+                Repeater::make('variationTypes')
                     ->label(false)
                     ->relationship()
                     ->collapsible()
@@ -58,12 +58,8 @@ class ProductVariationTypes extends EditRecord
                                     ->preserveFilenames()
                                     ->columnSpan(3)
                             ])
-                            ->columnsSpan(2)
+                            ->columnSpan(2)
                     ]),
-
-
-
-
             ]);
     }
     protected function getHeaderActions(): array
