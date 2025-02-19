@@ -14,7 +14,7 @@ class ProductController extends Controller
     public function home()
     {
         $products = Product::query()
-            ->published()
+            // ->scopeForWebsite()
             ->paginate(12);
 
         return Inertia::render('Home', [
